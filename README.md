@@ -1,46 +1,77 @@
-Motorbikes
+Motorbike Catalog
 ==========
 
-A test Symfony2 project
+A web application built with Symfony 2 for managing and browsing motorbikes.
+The project demonstrates a classic MVC architecture with CRUD operations, pagination, sorting, and file uploads.
 
-### Version
-Ver 3.0:
- - Clean the codes
- - Add more unit test files
+## Features
 
-Ver 2.0:
- - Add pagination class include twig template file
- - Add macro for sorting
- - Update unit test files
- - Add more configs
+* Motorbike management (CRUD)
+* Pagination for listing items
+* Sorting by different fields (id, price, etc.)
+* Image upload for motorbikes
+* Basic user management
+* Server-side rendering with Twig templates
 
-### Installation
+## Tech Stack
 
-Pretty simple with Composer, run:
+* PHP (Symfony 2.7)
+* Doctrine ORM
+* MySQL
+* Twig Templating Engine
 
+## Database Structure
 
-```sh
-$ composer require cpkgroup/Motorbikes
-```
-### Configuration example
+* `motorbikes` – Stores bike information (model, engine, price, etc.)
+* `user` – Basic user data
 
-Create a database (mysql or sqlite etc.) and config the database on "app/config/parameters.yml"
-```yaml
-parameters:
-    database_host: 127.0.0.1
-    database_port: null
-    database_name: test
-    database_user: root
-    database_password: 
-```
-You can configure default upload path and pagination size on "app/config/config.yml"
+## Key Implementation Details
 
-```yaml
-parameters:
-    locale: en
-    motorbikes:
-        items_per_page: 5
-        web_dir: web
-        upload_dir: uploads
-```
+* Pagination implemented using Doctrine Paginator
+* Dynamic sorting via query parameters
+* File upload handling for product images
+* MVC pattern using Symfony controllers, entities, and forms
 
+## Installation
+
+1. Clone the repository:
+
+   ```
+   git clone <repository-url>
+   cd motorbike-catalog
+   ```
+
+2. Install dependencies:
+
+   ```
+   composer install
+   ```
+
+3. Configure database:
+   Update `app/config/parameters.yml`
+
+4. Import database:
+
+   ```
+   mysql -u root -p < database.sql
+   ```
+
+5. Run application:
+
+   ```
+   php app/console server:run
+   ```
+
+6. Open in browser:
+
+   ```
+   http://localhost:8000
+   ```
+
+## Notes
+
+This project was developed as an early practice project using Symfony 2 and demonstrates fundamental concepts such as CRUD operations, pagination, and MVC architecture.
+
+## Author
+
+Mohamad Habibi
